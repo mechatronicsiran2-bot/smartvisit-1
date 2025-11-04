@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موبایل A+ | فروش موبایل و لوازم جانبی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #000000; /* مشکی */
+            --secondary: #333333; /* مشکی تیره */
+            --accent: #666666; /* طوسی */
+            --accent-light: #999999; /* طوسی روشن */
+            --text: #ffffff; /* سفید */
+            --text-light: #cccccc; /* سفید کمرنگ */
+            --background: #1a1a1a; /* مشکی روشن */
+            --white: #f5f5f5;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            --radius: 10px;
+        }
+        
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--accent);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.9)),
+                url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+        }
+        
+        /* Installment Banner */
+        .installment-banner {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .installment-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .installment-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .installment-subtext {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Quick Contact Section */
+        .quick-contact-section {
+            padding: 2rem 1rem;
+            background: var(--background);
+        }
+        
+        .quick-contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: var(--radius);
+            background: var(--secondary);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(102, 102, 102, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .contact-details a, .contact-details p {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .contact-details a:hover {
+            color: var(--accent-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .quick-contact {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+        
+        .quick-contact:hover {
+            transform: translateY(-10px);
+        }
+        
+        .quick-contact h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .quick-contact p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .contact-btn.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+        
+        .contact-btn.map {
+            background: #34A853;
+            color: white;
+        }
+        
+        .contact-btn.email {
+            background: #EA4335;
+            color: white;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Add to Home Section */
+        .add-to-home-section {
+            padding: 1.5rem 1rem;
+            background: var(--background);
+            text-align: center;
+        }
+        
+        .add-to-home-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            color: var(--white);
+        }
+        
+        .add-to-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.6rem 1.2rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .add-to-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 102, 102, 0.4);
+        }
+        
+        /* Visit Smart Section */
+        .visit-smart-section {
+            padding: 1.5rem 1rem;
+            background: var(--primary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .visit-smart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .visit-smart-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .visit-smart-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .visit-smart-contact a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .visit-smart-contact a:hover {
+            color: var(--white);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.show {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background: var(--secondary);
+            border-radius: var(--radius);
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .modal-close:hover {
+            color: var(--accent-light);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+        
+        .modal-steps {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-step {
+            margin-bottom: 1.2rem;
+            padding-right: 1rem;
+            border-right: 3px solid var(--accent);
+        }
+        
+        .modal-step h4 {
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .modal-step p {
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .modal-footer {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-btn {
+            padding: 0.7rem 1.2rem;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 1rem;
+                min-height: 40vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+            
+            .quick-contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .installment-text {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1.5rem 1rem;
+                min-height: 35vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+            }
+            
+            .installment-text {
+                font-size: 1.3rem;
+            }
+            
+            .visit-smart-contact {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://i.ibb.co/9kCbt1ZF/logo.png" alt="موبایل A+ Logo" class="logo-img">
+                <div class="logo-text">موبایل A+</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>موبایل A+ | فروش موبایل و لوازم جانبی</h1>
+            <p>با ما به روز باشید! فروش انواع موبایل و لوازم جانبی اندروید و آیفون با بهترین کیفیت و قیمت</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> تماس با ما
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installment Banner -->
+    <section class="installment-banner">
+        <div class="installment-container">
+            <div class="installment-text">فروش اقساطی</div>
+            <div class="installment-subtext">خرید آسان با امکان پرداخت اقساطی</div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact-section" id="contact">
+        <div class="quick-contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>آدرس فروشگاه</h3>
+                        <p>میدان جانباز - مجتمع تجاری پروما - طبقه اول واحد 157</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شماره تماس</h3>
+                        <a href="tel:09364174474">۰۹۳۶۴۱۷۴۴۷۴</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شبکه‌های اجتماعی</h3>
+                        <p>اینستاگرام: mobileaplus</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/mobileaplus" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-contact">
+                <h3>ارتباط سریع</h3>
+                <p>برای دریافت اطلاعات بیشتر، مشاوره رایگان و خرید، از طریق یکی از روش‌های زیر با ما در تماس باشید</p>
+                
+                <div class="contact-buttons">
+                    <a href="https://wa.me/989364174474" class="contact-btn whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> واتساپ
+                    </a>
+                    
+                    <a href="https://instagram.com/mobileaplus" class="contact-btn instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> اینستاگرام
+                    </a>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=میدان جانباز - مجتمع تجاری پروما" class="contact-btn map" target="_blank">
+                        <i class="fas fa-map-marked-alt"></i> مسیریابی
+                    </a>
+                    
+                    <a href="mailto:info@mobileaplus.com" class="contact-btn email">
+                        <i class="fas fa-envelope"></i> ارسال ایمیل
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add to Home Section -->
+    <section class="add-to-home-section">
+        <div class="add-to-home-container">
+            <button class="add-to-home-btn" id="addToHomeBtn">
+                <i class="fas fa-plus-circle"></i> افزودن به صفحه اصلی
+            </button>
+        </div>
+    </section>
+
+    <!-- Visit Smart Section -->
+    <section class="visit-smart-section">
+        <div class="visit-smart-container">
+            <p class="visit-smart-text">این صفحه مربوط به تبلیغات Visit Smart می‌باشد. جهت سفارش طراحی صفحات مشابه با شماره‌های زیر تماس بگیرید:</p>
+            <div class="visit-smart-contact">
+                <a href="tel:09389793809">۰۹۳۸۹۷۹۳۸۰۹</a>
+                <a href="tel:09158148021">۰۹۱۵۸۱۴۸۰۲۱</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Add to Home Screen Instructions -->
+    <div class="modal" id="addToHomeModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">آموزش افزودن به صفحه اصلی</h3>
+            
+            <div class="modal-steps">
+                <div class="modal-step">
+                    <h4>مرحله ۱: منو را باز کنید</h4>
+                    <p>در مرورگر خود، روی دکمه منو (سه نقطه یا سه خط) در بالا یا پایین صفحه کلیک کنید.</p>
+                </div>
+                
+                <div class="modal-step">
+                    <h4>مرحله ۲: گزینه افزودن را انتخاب کنید</h4>
+                    <p>در منوی باز شده، گزینه "Add to Home Screen" یا "افزودن به صفحه اصلی" را انتخاب کنید.</p>
+                </div>
+                
+                <div class="modal-step">
+                    <h4>مرحله ۳: تأیید کنید</h4>
+                    <p>در پنجره باز شده، روی "Add" یا "افزودن" کلیک کنید تا آیکون سایت به صفحه اصلی دستگاه شما اضافه شود.</p>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>با این کار می‌توانید مانند یک اپلیکیشن به فروشگاه ما دسترسی سریع داشته باشید.</p>
+                <button class="modal-btn" id="modalOkBtn">متوجه شدم</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add to Home Screen Functionality
+        const addToHomeBtn = document.getElementById('addToHomeBtn');
+        const addToHomeModal = document.getElementById('addToHomeModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOkBtn = document.getElementById('modalOkBtn');
+
+        // Show modal when Add to Home button is clicked
+        addToHomeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            addToHomeModal.classList.add('show');
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            addToHomeModal.classList.remove('show');
+        });
+
+        modalOkBtn.addEventListener('click', () => {
+            addToHomeModal.classList.remove('show');
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === addToHomeModal) {
+                addToHomeModal.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

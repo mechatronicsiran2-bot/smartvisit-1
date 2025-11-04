@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27Shoes - فروشگاه تخصصی کفش و کتونی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0d6efd;
+            --accent-light: #3d8bfd;
+            --text: #2c3e50;
+            --text-light: #6c757d;
+            --background: #ffffff;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 15px 40px rgba(0, 0, 0, 0.2);
+            --radius: 20px;
+            --gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 5px solid var(--accent);
+            box-shadow: 0 0 30px rgba(13, 110, 253, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.2rem 0;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+            transition: all 0.4s ease;
+            border: 3px solid var(--accent);
+        }
+        
+        .logo:hover .logo-img {
+            transform: rotate(15deg) scale(1.1);
+            box-shadow: 0 12px 35px rgba(13, 110, 253, 0.5);
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Lalezar', cursive;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(rgba(22, 33, 62, 0.85), rgba(26, 26, 46, 0.9)),
+                url('https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(13, 110, 253, 0.2) 0%, transparent 50%);
+        }
+        
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+            font-family: 'Lalezar', cursive;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px) scale(1.05);
+        }
+        
+        /* Card Info Section - Moved up */
+        .card-info {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+        
+        .card-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.3) 0%, transparent 50%);
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-details {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .card-details:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-number {
+            font-size: 1.6rem;
+            font-family: monospace;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            direction: ltr;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .card-holder {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .copy-text {
+            font-size: 1rem;
+            color: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* Quick Contact Section */
+        .quick-contact-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+        
+        .quick-contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(15px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .contact-details a, .contact-details p {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .social-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .social-link:hover::after {
+            opacity: 1;
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+        }
+        
+        .social-text {
+            position: absolute;
+            bottom: -25px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .social-link:hover .social-text {
+            opacity: 1;
+        }
+        
+        .quick-contact {
+            background: var(--gradient);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            text-align: center;
+            transition: all 0.4s ease;
+            color: var(--white);
+        }
+        
+        .quick-contact:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .quick-contact h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .quick-contact p {
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 1.2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+        
+        .contact-btn.telegram {
+            background: linear-gradient(135deg, #0088cc, #005f8b);
+            color: white;
+        }
+        
+        .contact-btn.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+        
+        .contact-btn.call {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+        }
+        
+        .contact-btn.map {
+            background: linear-gradient(135deg, #34A853, #0F9D58);
+            color: white;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M30,30 L70,30 L70,70 L30,70 Z" stroke="%23ffffff" stroke-width="1" fill="none" opacity="0.1"/></svg>');
+            background-size: 100px;
+            opacity: 0.1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-family: 'Lalezar', cursive;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: var(--white);
+            font-size: 2.2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(15deg);
+            background: rgba(13, 110, 253, 0.3);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+        
+        /* Add to Home Section */
+        .add-to-home-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+        
+        .add-to-home-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--gradient);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .add-to-home-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.3) 0%, transparent 50%);
+        }
+        
+        .add-to-home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .add-to-home-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.4);
+            flex-shrink: 0;
+        }
+        
+        .add-to-home-text {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .add-to-home-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .add-to-home-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+        
+        /* Visit Smart Section */
+        .visit-smart-section {
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .visit-smart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .visit-smart-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .visit-smart-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .visit-smart-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .visit-smart-contact a:hover {
+            color: var(--accent-light);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.show {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            text-align: center;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .modal-close:hover {
+            color: var(--accent);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .modal-steps {
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-step {
+            margin-bottom: 1.5rem;
+            padding-right: 1rem;
+            border-right: 3px solid var(--accent);
+        }
+        
+        .modal-step h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .modal-step p {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .modal-footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+        }
+        
+        /* Copy Notification */
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            z-index: 1001;
+            display: none;
+            animation: fadeInUp 0.3s;
+        }
+        
+        .copy-notification.show {
+            display: block;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+                min-height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .quick-contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+            
+            .features {
+                padding: 4rem 1rem;
+            }
+            
+            .quick-contact-section, .card-info, .add-to-home-section {
+                padding: 3rem 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .social-text {
+                display: none;
+            }
+            
+            .add-to-home-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .add-to-home-text {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 60vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features, .quick-contact-section, .card-info, .add-to-home-section {
+                padding: 3rem 1rem;
+            }
+            
+            .feature-card, .quick-contact, .card-container, .add-to-home-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .card-number {
+                font-size: 1.3rem;
+            }
+            
+            .loading-logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="https://i.ibb.co/JwNqqNXq/27shoes-logo.jpg" alt="27Shoes Logo" class="loading-logo">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://i.ibb.co/JwNqqNXq/27shoes-logo.jpg" alt="27Shoes Logo" class="logo-img">
+                <div class="logo-text">27Shoes</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">خانه</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>27Shoes - تخصصی‌ترین فروشگاه کفش و کتونی</h1>
+            <p>با جدیدترین و شیک‌ترین مدل‌های کفش و کتونی روز دنیا در خدمت شما هستیم. خرید حضوری و آنلاین با ارسال فوری و تضمین کیفیت</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fas fa-shoe-prints"></i> خدمات ما
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-phone-alt"></i> تماس با ما
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Info Section - Moved up -->
+    <section class="card-info">
+        <div class="card-container">
+            <h3 class="card-title">شماره کارت بانکی</h3>
+            <div class="card-details" id="cardDetails">
+                <div class="card-number">5054 1610 1434 7029</div>
+                <div class="card-holder">به نام: محمد امین آبادی</div>
+                <div class="copy-text">
+                    <i class="fas fa-copy"></i>
+                    کلیک کنید تا کپی شود
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact-section" id="contact">
+        <div class="quick-contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>آدرس کامل فروشگاه</h3>
+                        <p>امامیه، چهارراه مخابرات، مجتمع اکسیر، طبقه همکف، واحد ۲۱۱</p>
+                        <p>فروشگاه کفش و کتونی 27Shoes</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شماره تماس</h3>
+                        <a href="tel:09158700075">۰۹۱۵۸۷۰۰۰۷۵</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شبکه‌های اجتماعی</h3>
+                        <div class="social-links">
+                            <a href="https://wa.me/989158700075" class="social-link" target="_blank">
+                                <i class="fab fa-whatsapp" style="color: white;"></i>
+                                <span class="social-text">واتساپ</span>
+                            </a>
+                            <a href="https://instagram.com/27__shoes" class="social-link" target="_blank">
+                                <i class="fab fa-instagram" style="color: white;"></i>
+                                <span class="social-text">اینستاگرام</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-contact">
+                <h3>ارتباط سریع</h3>
+                <p>برای دریافت اطلاعات بیشتر و مشاوره رایگان، از طریق یکی از روش‌های زیر با ما در تماس باشید</p>
+                
+                <div class="contact-buttons">
+                    <a href="https://wa.me/989158700075" class="contact-btn whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> واتساپ
+                    </a>
+                    
+                    <a href="https://instagram.com/27__shoes" class="contact-btn instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> اینستاگرام
+                    </a>
+                    
+                    <a href="tel:09158700075" class="contact-btn call">
+                        <i class="fas fa-phone-alt"></i> تماس تلفنی
+                    </a>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=امامیه، چهارراه مخابرات، مجتمع اکسیر، طبقه همکف، واحد ۲۱۱" class="contact-btn map" target="_blank">
+                        <i class="fas fa-map-marked-alt"></i> مسیریابی
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="section-title">
+            <h2>چرا 27Shoes؟</h2>
+            <p>ویژگی‌هایی که ما را به انتخاب اول شما تبدیل می‌کند</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shoe-prints"></i>
+                </div>
+                <h3>تنوع بی‌نظیر</h3>
+                <p>مجموعه‌ای کامل از انواع کفش و کتونی با جدیدترین مدل‌های روز دنیا برای تمامی سلیقه‌ها</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>تضمین کیفیت</h3>
+                <p>استفاده از بهترین مواد و ساخت حرفه‌ای برای ارائه محصولاتی با کیفیت و ماندگاری بالا</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>ارسال فوری</h3>
+                <p>ارسال به تمام نقاط کشور در کوتاه‌ترین زمان ممکن با بسته‌بندی‌های شکیل و استاندارد</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h3>خرید حضوری و آنلاین</h3>
+                <p>امکان خرید هم به صورت حضوری از فروشگاه و هم به صورت آنلاین از طریق اینستاگرام</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add to Home Section -->
+    <section class="add-to-home-section">
+        <div class="add-to-home-container">
+            <div class="add-to-home-content">
+                <img src="https://i.ibb.co/JwNqqNXq/27shoes-logo.jpg" alt="27Shoes Logo" class="add-to-home-logo">
+                <div class="add-to-home-text">
+                    <h3>افزودن به صفحه اصلی</h3>
+                    <p>برای دسترسی سریع‌تر به فروشگاه، این صفحه را به صفحه اصلی دستگاه خود اضافه کنید. با این کار می‌توانید مانند یک اپلیکیشن به فروشگاه ما دسترسی داشته باشید.</p>
+                    <button class="btn btn-primary" id="addToHomeBtn">
+                        <i class="fas fa-plus-circle"></i> آموزش افزودن به صفحه اصلی
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>27Shoes</h4>
+                <p>فروشگاه تخصصی کفش و کتونی با سال‌ها تجربه در ارائه بهترین و جدیدترین مدل‌های روز دنیا</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>خدمات ما</h4>
+                <ul>
+                    <li><i class="fas fa-male"></i> کفش مردانه</li>
+                    <li><i class="fas fa-female"></i> کفش زنانه</li>
+                    <li><i class="fas fa-child"></i> کفش بچگانه</li>
+                    <li><i class="fas fa-running"></i> کتونی ورزشی</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>تماس با ما</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> امامیه، چهارراه مخابرات، مجتمع اکسیر، طبقه همکف، واحد ۲۱۱</li>
+                    <li><i class="fas fa-phone-alt"></i> ۰۹۱۵۸۷۰۰۰۷۵</li>
+                    <li><i class="fab fa-whatsapp"></i> واتساپ</li>
+                    <li><i class="fab fa-instagram"></i> اینستاگرام</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>تمامی حقوق توسط شرکت Visit Smart محفوظ است &copy; ۱۴۰۴</p>
+        </div>
+    </footer>
+
+    <!-- Visit Smart Section -->
+    <section class="visit-smart-section">
+        <div class="visit-smart-container">
+            <p class="visit-smart-text">این صفحه مربوط به تبلیغات Visit Smart می‌باشد. جهت سفارش طراحی صفحات مشابه با شماره‌های زیر تماس بگیرید:</p>
+            <div class="visit-smart-contact">
+                <a href="tel:09389793809">۰۹۳۸۹۷۹۳۸۰۹</a>
+                <a href="tel:09158148021">۰۹۱۵۸۱۴۸۰۲۱</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Add to Home Screen Instructions -->
+    <div class="modal" id="addToHomeModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">آموزش افزودن به صفحه اصلی</h3>
+            
+            <div class="modal-steps">
+                <div class="modal-step">
+                    <h4>مرحله ۱: منو را باز کنید</h4>
+                    <p>در مرورگر خود، روی دکمه منو (سه نقطه یا سه خط) در بالا یا پایین صفحه کلیک کنید.</p>
+                </div>
+                
+                <div class="modal-step">
+                    <h4>مرحله ۲: گزینه افزودن را انتخاب کنید</h4>
+                    <p>در منوی باز شده، گزینه "Add to Home Screen" یا "افزودن به صفحه اصلی" را انتخاب کنید.</p>
+                </div>
+                
+                <div class="modal-step">
+                    <h4>مرحله ۳: تأیید کنید</h4>
+                    <p>در پنجره باز شده، روی "Add" یا "افزودن" کلیک کنید تا آیکون سایت به صفحه اصلی دستگاه شما اضافه شود.</p>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <p>با این کار می‌توانید مانند یک اپلیکیشن به فروشگاه ما دسترسی سریع داشته باشید.</p>
+                <button class="modal-btn" id="modalOkBtn">متوجه شدم</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">
+        <i class="fas fa-check-circle"></i> شماره کارت کپی شد!
+    </div>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Add to Home Screen Functionality
+        const addToHomeBtn = document.getElementById('addToHomeBtn');
+        const addToHomeModal = document.getElementById('addToHomeModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOkBtn = document.getElementById('modalOkBtn');
+
+        // Show modal when Add to Home button is clicked
+        addToHomeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            addToHomeModal.classList.add('show');
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            addToHomeModal.classList.remove('show');
+        });
+
+        modalOkBtn.addEventListener('click', () => {
+            addToHomeModal.classList.remove('show');
+        });
+
+        // Copy Card Number Functionality
+        const cardDetails = document.getElementById('cardDetails');
+        const copyNotification = document.getElementById('copyNotification');
+        const cardNumber = '5054161014347029';
+
+        cardDetails.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(cardNumber);
+                
+                // Show notification
+                copyNotification.classList.add('show');
+                
+                // Hide notification after 2 seconds
+                setTimeout(() => {
+                    copyNotification.classList.remove('show');
+                }, 2000);
+                
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = cardNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Show notification
+                copyNotification.classList.add('show');
+                
+                // Hide notification after 2 seconds
+                setTimeout(() => {
+                    copyNotification.classList.remove('show');
+                }, 2000);
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
