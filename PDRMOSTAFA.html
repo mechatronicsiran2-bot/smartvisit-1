@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات بدنه مصطفی | صافکاری تخصصی PDR خودرو</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #121212;
+            --accent: #FFD700;
+            --accent-light: #FFE55C;
+            --accent-dark: #B8860B;
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            --gradient-card: linear-gradient(145deg, #1a1a1a 0%, #222222 100%);
+            --neon-glow: 0 0 20px rgba(255, 215, 0, 0.5);
+            --white: #ffffff;
+            --text: #ffffff;
+        }
+        
+        body {
+            background: var(--gradient-dark);
+            color: var(--text);
+            font-family: 'Vazirmatn', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--accent);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: var(--neon-glow);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-family: 'Lalezar', cursive;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::before {
+            transform: scaleX(1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Lalezar', cursive;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-gold {
+            background: var(--gradient-gold);
+            color: var(--primary);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* Services */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--secondary);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            font-family: 'Lalezar', cursive;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: var(--gradient-card);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--primary);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            background: var(--gradient-card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .contact-info h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Bank Card */
+        .bank-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-number {
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            direction: ltr;
+        }
+        
+        /* Social Buttons */
+        .social-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: var(--text);
+        }
+        
+        .social-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 4rem 2rem 2rem;
+            border-top: 2px solid var(--accent);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .hero {
+                padding: 120px 1rem 0;
+            }
+            
+            .services, .contact {
+                padding: 4rem 1rem;
+            }
+            
+            .card-number {
+                font-size: 1.4rem;
+                padding: 1rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://i.ibb.co/pB88XC53/image.png" alt="خدمات بدنه مصطفی" class="logo-img">
+                <div class="logo-text">خدمات بدنه مصطفی</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#services">خدمات</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>
+                <span>خدمات بدنه مصطفی</span><br>
+                صافکاری تخصصی PDR خودرو
+            </h1>
+            <p>
+                با جدیدترین تکنولوژی PDR برای صافکاری بدون رنگ بدنه خودرو در خدمت شما هستیم.<br>
+                کیفیت تضمینی، قیمت مناسب، خدمات سریع و تخصصی.
+            </p>
+            <a href="#contact" class="btn btn-gold">
+                <i class="fas fa-phone-alt"></i>
+                دریافت مشاوره رایگان
+            </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="section-title">خدمات تخصصی ما</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-car-crash"></i>
+                </div>
+                <h3>صافکاری PDR</h3>
+                <p>رفع فرورفتگی‌های بدنه بدون نیاز به رنگ‌آمیزی با تکنولوژی روز دنیا</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>تعمیرات بدنه</h3>
+                <p>تعمیر تخصصی انواع آسیب‌های بدنه خودرو با بهترین کیفیت و مواد اولیه</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>کیفیت تضمینی</h3>
+                <p>ارائه خدمات با ضمانت کیفیت و پشتیبانی کامل پس از انجام کار</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">تماس با ما</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> آدرس کارگاه</h3>
+                    <p>بلوار هدايت، نبش هدايت ١٥، صافكاری مصطفی</p>
+                    <a href="https://maps.google.com/?q=بلوار+هدايت+نبش+هدايت+١٥+صافکاری+مصطفی" target="_blank" class="btn btn-gold" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-map-marked-alt"></i> مسیریابی در نقشه
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> تماس تلفنی</h3>
+                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">۰۹۱۵ ۸۰۰۰ ۱۱۸</p>
+                    <a href="tel:09158000118" class="btn btn-gold" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-phone"></i> تماس مستقیم
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bank-card">
+                <h3><i class="fas fa-credit-card"></i> شماره کارت بانکی</h3>
+                <div class="card-number" id="bankCard">6219 8619 3744 4593</div>
+                <p style="text-align: center; color: var(--accent); font-weight: 600;">به نام: مصطفی فخرآل‌علی</p>
+                <button class="btn btn-gold" onclick="copyCardNumber()" style="width: 100%; margin-top: 1rem;">
+                    <i class="fas fa-copy"></i> کپی شماره کارت
+                </button>
+            </div>
+        </div>
+        
+        <div class="social-buttons">
+            <a href="https://instagram.com/safkari_takhassosi_mostafa" class="social-btn" target="_blank">
+                <i class="fab fa-instagram"></i> اینستاگرام
+            </a>
+            <a href="https://t.me/m_o_stafa123" class="social-btn" target="_blank">
+                <i class="fab fa-telegram"></i> تلگرام
+            </a>
+            <a href="https://eitaa.com/safkari_takhassosi_mostafa" class="social-btn" target="_blank">
+                <i class="fas fa-paper-plane"></i> ایتا
+            </a>
+            <a href="mailto:mostafafakhrallali@gmail.com" class="social-btn">
+                <i class="fas fa-envelope"></i> ایمیل
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div style="margin-bottom: 2rem;">
+                <div class="logo-text" style="font-size: 2rem;">خدمات بدنه مصطفی</div>
+                <p style="margin-top: 1rem; opacity: 0.8;">تخصص، کیفیت، اطمینان</p>
+            </div>
+            
+            <div class="visit-smart">
+                <p>طراحی شده توسط <span style="color: var(--accent); font-weight: 600;">Visit Smart</span></p>
+                <div style="margin-top: 1rem;">
+                    <a href="tel:09389793809" style="color: var(--accent); margin: 0 1rem; text-decoration: none;">۰۹۳۸۹۷۹۳۸۰۹</a>
+                    <a href="tel:09158148021" style="color: var(--accent); margin: 0 1rem; text-decoration: none;">۰۹۱۵۸۱۴۸۰۲۱</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 215, 0, 0.2);">
+                <p>© ۱۴۰۴ کلیه حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Copy Card Number
+        function copyCardNumber() {
+            const cardNumber = '6219861937444593';
+            navigator.clipboard.writeText(cardNumber).then(() => {
+                alert('شماره کارت کپی شد: ' + cardNumber);
+            }).catch(err => {
+                console.error('خطا در کپی کردن:', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = cardNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('شماره کارت کپی شد: ' + cardNumber);
+            });
+        }
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-btn') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
