@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>سالن پیرایش سعید | SAEID BARBER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #3a3a3a;
+            --text-white: #ffffff;
+            --text-gray: #cccccc;
+            --text-light: #f0f0f0;
+            --accent: #ffd700;
+            --accent-light: #fff8dc;
+            --radius: 10px;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.6);
+            --transition: all 0.2s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--text-white);
+            line-height: 1.4;
+            min-height: 100vh;
+            padding-bottom: env(safe-area-inset-bottom);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: var(--dark-gray);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .brand-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1.2;
+        }
+        
+        .brand-name span {
+            color: var(--accent);
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        
+        /* Add to Home Button */
+        .add-to-home {
+            background: var(--medium-gray);
+            color: var(--text-white);
+            border: 1px solid var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .add-to-home:hover {
+            background: var(--light-gray);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 30px 15px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+        }
+        
+        .hero-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+        
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--medium-gray);
+            color: var(--text-white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gray);
+        }
+        
+        /* Bank Cards */
+        .bank-cards {
+            padding: 25px 15px;
+            background: var(--black);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .bank-card {
+            background: var(--dark-gray);
+            border-radius: var(--radius);
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .card-title i {
+            color: var(--accent);
+        }
+        
+        .copy-btn {
+            background: var(--medium-gray);
+            color: var(--text-white);
+            border: 1px solid var(--light-gray);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .copy-btn:hover {
+            background: var(--light-gray);
+        }
+        
+        .card-number {
+            background: var(--black);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-align: center;
+            color: var(--text-white);
+            border: 1px solid var(--medium-gray);
+            direction: ltr;
+            word-break: break-all;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 25px 15px;
+            background: var(--dark-gray);
+        }
+        
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-card {
+            background: var(--black);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--text-white);
+        }
+        
+        .contact-header i {
+            color: var(--accent);
+            font-size: 18px;
+        }
+        
+        .contact-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: var(--dark-gray);
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            border-color: var(--accent);
+        }
+        
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--medium-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-bottom: 3px;
+        }
+        
+        .contact-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+        
+        .contact-link {
+            color: var(--text-white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-link:hover {
+            color: var(--accent);
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .action-btn i {
+            font-size: 16px;
+        }
+        
+        .action-btn.call {
+            background: var(--medium-gray);
+            color: var(--text-white);
+            border-color: var(--light-gray);
+        }
+        
+        .action-btn.call:hover {
+            background: var(--light-gray);
+        }
+        
+        .action-btn.map {
+            background: var(--medium-gray);
+            color: var(--text-white);
+            border-color: var(--light-gray);
+        }
+        
+        .action-btn.map:hover {
+            background: var(--light-gray);
+        }
+        
+        .action-btn.instagram {
+            background: linear-gradient(45deg, #405DE6, #833AB4);
+            color: var(--text-white);
+            border: none;
+        }
+        
+        .action-btn.instagram:hover {
+            opacity: 0.9;
+        }
+        
+        /* Working Hours */
+        .working-hours {
+            padding: 15px;
+            background: var(--black);
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .hours-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .hours-title i {
+            color: var(--accent);
+        }
+        
+        .hours-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+            padding: 8px;
+            background: var(--dark-gray);
+            border-radius: 6px;
+        }
+        
+        /* Services */
+        .services {
+            padding: 25px 15px;
+            background: var(--black);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .service-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        
+        .service-icon {
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .service-card h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-white);
+        }
+        
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--text-white);
+            padding: 25px 15px 15px;
+            border-top: 1px solid var(--light-gray);
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 2px solid var(--accent);
+        }
+        
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .social-link:hover {
+            background: var(--light-gray);
+            transform: scale(1.1);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--medium-gray);
+            color: var(--text-gray);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        
+        .modal-content {
+            background: var(--dark-gray);
+            border-radius: var(--radius);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid var(--light-gray);
+            animation: modalSlide 0.3s ease;
+        }
+        
+        @keyframes modalSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--medium-gray);
+            padding-bottom: 10px;
+        }
+        
+        .modal-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: var(--black);
+            border-radius: 8px;
+            border-right: 2px solid var(--accent);
+        }
+        
+        .step-number {
+            background: var(--accent);
+            color: var(--black);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            color: var(--text-white);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--dark-gray);
+            color: var(--text-white);
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 9998;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--accent);
+            box-shadow: var(--shadow-lg);
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        .notification.show {
+            display: flex;
+            animation: notificationSlide 0.3s ease;
+        }
+        
+        @keyframes notificationSlide {
+            from {
+                opacity: 0;
+                transform: translateX(50%) translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(50%) translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .quick-actions {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .brand-name {
+                font-size: 18px;
+            }
+            
+            .brand-name span {
+                font-size: 14px;
+            }
+        }
+        
+        /* برای صفحات لمسی */
+        @media (hover: none) {
+            .contact-item:hover,
+            .service-card:hover,
+            .bank-card:hover,
+            .copy-btn:hover,
+            .action-btn:hover,
+            .social-link:hover {
+                transform: none;
+            }
+            
+            .contact-item:active,
+            .service-card:active,
+            .bank-card:active,
+            .copy-btn:active,
+            .action-btn:active,
+            .social-link:active {
+                transform: scale(0.98);
+                opacity: 0.9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText"></span>
+    </div>
+    
+    <!-- Add to Home Modal -->
+    <div class="modal" id="addToHomeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-mobile-alt"></i> افزودن به صفحه اصلی</h3>
+                <button class="close-modal" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">در مرورگر روی منوی <strong>⋯</strong> کلیک کنید</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">گزینه <strong>"Add to Home Screen"</strong> را انتخاب کنید</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">در پنجره باز شده روی <strong>"Add"</strong> کلیک کنید</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">آیکون سالن به صفحه اصلی اضافه خواهد شد</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="https://i.ibb.co/WNK1nSZD/image.png" alt="SAEID BARBER Logo">
+                    </div>
+                    <div class="brand-name">
+                        SAEID BARBER
+                        <span>KORMANJ</span>
+                    </div>
+                </div>
+                <button class="add-to-home" id="addToHomeBtn">
+                    <i class="fas fa-plus-circle"></i>
+                    افزودن به صفحه اصلی
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">✂️ سالن پیرایش مردانه ✂️</div>
+            <h1 class="hero-title">سالن پیرایش سعید</h1>
+            <p class="hero-subtitle">
+                ارائه بهترین خدمات آرایشگری با حرفه‌ای‌ترین آرایشگران و مدرن‌ترین تجهیزات
+            </p>
+        </div>
+    </section>
+
+    <!-- Bank Cards Section -->
+    <section class="bank-cards" id="bank">
+        <div class="container">
+            <h2 class="section-title">شماره کارت‌های بانکی</h2>
+            <div class="cards-container">
+                <div class="bank-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-credit-card"></i>
+                            کارت اول
+                        </div>
+                        <button class="copy-btn" data-copy="6063731240008889">
+                            <i class="far fa-copy"></i>
+                            کپی
+                        </button>
+                    </div>
+                    <div class="card-number">6063-7312-4000-8889</div>
+                </div>
+                
+                <div class="bank-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-credit-card"></i>
+                            کارت دوم
+                        </div>
+                        <button class="copy-btn" data-copy="6219861844686740">
+                            <i class="far fa-copy"></i>
+                            کپی
+                        </button>
+                    </div>
+                    <div class="card-number">6219-8618-4468-6740</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">راه‌های ارتباطی</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>اطلاعات تماس</h3>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">شماره تماس</div>
+                                <a href="tel:09374930522" class="contact-value contact-link">09374930522</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">اینستاگرام</div>
+                                <a href="https://instagram.com/saeidgoli2717" class="contact-value contact-link" target="_blank">@saeidgoli2717</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">آدرس</div>
+                                <div class="contact-value">قاسم آباد، تقاطع اندیشه و شاهد 64، جنب نانوایی</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="working-hours">
+                        <div class="hours-title">
+                            <i class="fas fa-clock"></i>
+                            <span>ساعات کاری</span>
+                        </div>
+                        <div class="hours-value">همه روزه ۸:۰۰ صبح تا ۲۳:۰۰ شب</div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <a href="tel:09374930522" class="action-btn call">
+                            <i class="fas fa-phone-alt"></i>
+                            تماس
+                        </a>
+                        <a href="https://nshn.ir/7c7b1pzJVJxwiE" class="action-btn map" target="_blank">
+                            <i class="fas fa-map-marked-alt"></i>
+                            مسیریابی
+                        </a>
+                        <a href="https://instagram.com/saeidgoli2717" class="action-btn instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            اینستاگرام
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدمات ما</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>پاکسازی پوست و مو</h3>
+                    <p>پاکسازی عمقی پوست و مو با بهترین محصولات بهداشتی</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>میکاپ داماد</h3>
+                    <p>میکاپ و آرایش ویژه داماد با بهترین کیفیت</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>فید حرفه‌ای</h3>
+                    <p>مدل‌های فید و کوتاهی مدرن مو</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>هیرکات تخصصی</h3>
+                    <p>مدل‌دهی و استایلینگ حرفه‌ای مو</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.ibb.co/WNK1nSZD/image.png" alt="SAEID BARBER Logo">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <h3 style="font-size: 18px; margin-bottom: 5px; color: var(--text-white);">SAEID BARBER</h3>
+                    <p style="color: var(--text-gray); font-size: 14px;">KORMANJ</p>
+                </div>
+                
+                <p style="color: var(--text-gray); margin-bottom: 20px; font-size: 13px; line-height: 1.5;">
+                    ارائه بهترین خدمات آرایشگری با سال‌ها تجربه و تخصص
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://instagram.com/saeidgoli2717" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="tel:09374930522" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="https://nshn.ir/7c7b1pzJVJxwiE" class="social-link" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                    <a href="https://ibb.co/WNK1nSZD" class="social-link" target="_blank">
+                        <i class="fas fa-image"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© تمامی حقوق برای سالن پیرایش سعید محفوظ است | ۱۴۰۳</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // متغیرهای اصلی
+        const addToHomeBtn = document.getElementById('addToHomeBtn');
+        const addToHomeModal = document.getElementById('addToHomeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        
+        // نمایش مودال
+        function showModal() {
+            addToHomeModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // مخفی کردن مودال
+        function hideModal() {
+            addToHomeModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        // نمایش نوتیفیکیشن
+        function showNotification(message, duration = 2000) {
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, duration);
+        }
+        
+        // رویداد کلیک روی دکمه افزودن به صفحه اصلی
+        addToHomeBtn.addEventListener('click', showModal);
+        
+        // رویداد کلیک روی دکمه بستن مودال
+        closeModalBtn.addEventListener('click', hideModal);
+        
+        // بستن مودال با کلیک روی زمینه
+        addToHomeModal.addEventListener('click', function(e) {
+            if (e.target === addToHomeModal) {
+                hideModal();
+            }
+        });
+        
+        // رویداد کلیک روی دکمه‌های کپی
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const cardNumber = this.getAttribute('data-copy');
+                
+                // استفاده از Clipboard API
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(cardNumber).then(() => {
+                        showNotification('شماره کارت کپی شد!');
+                        this.innerHTML = '<i class="fas fa-check"></i> کپی شد';
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="far fa-copy"></i> کپی';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('خطا در کپی کردن: ', err);
+                        showNotification('خطا در کپی کردن');
+                    });
+                } else {
+                    // روش قدیمی برای مرورگرهای قدیمی
+                    const textArea = document.createElement('textarea');
+                    textArea.value = cardNumber;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    showNotification('شماره کارت کپی شد!');
+                    this.innerHTML = '<i class="fas fa-check"></i> کپی شد';
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="far fa-copy"></i> کپی';
+                    }, 2000);
+                }
+            });
+        });
+        
+        // اسکرول نرم
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // انیمیشن هنگام اسکرول
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // مشاهده المان‌ها برای انیمیشن
+        document.querySelectorAll('.service-card, .contact-card, .bank-card').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // بهینه‌سازی برای موبایل
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // جلوگیری از زوم دوباره
+        document.addEventListener('dblclick', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // لود اولیه
+        window.addEventListener('load', function() {
+            // نمایش پیام خوش‌آمد
+            setTimeout(() => {
+                console.log('🎯 صفحه سالن پیرایش سعید با موفقیت بارگذاری شد');
+                console.log('📱 بهینه‌سازی شده برای موبایل');
+                console.log('📍 مسیریابی: nshn.ir/7c7b1pzJVJxwiE');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
