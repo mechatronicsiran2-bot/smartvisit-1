@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohrab.sa | لوازم جانبی موبایل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #151515;
+            --accent: #d4af37;
+            --accent-light: #f0d78c;
+            --accent2: #c9a227;
+            --text: #e0e0e0;
+            --text-light: #888888;
+            --background: #0f0f0f;
+            --white: #f5f5f5;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.7);
+            --radius: 24px;
+            --gradient: linear-gradient(145deg, #0a0a0a 0%, #151515 100%);
+            --gradient-accent: linear-gradient(135deg, #d4af37 0%, #b8960f 100%);
+        }
+
+        body {
+            background: var(--gradient);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: right;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Lalezar', cursive;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background:
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 7rem 2rem 5rem;
+            text-align: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.92) 0%, rgba(15,15,15,0.85) 100%);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            font-family: 'Lalezar', cursive;
+            color: var(--white);
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            display: block;
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.9;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            border: none;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #0a0a0a;
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            color: var(--accent-light);
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        /* Card Section */
+        .card-highlight-section {
+            padding: 5rem 2rem;
+            background: var(--background);
+            position: relative;
+        }
+
+        .card-highlight-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 3.5rem 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .card-highlight-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+            animation: rotateGlow 15s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .card-highlight-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: #0a0a0a;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .card-highlight-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-family: 'Lalezar', cursive;
+        }
+
+        .card-number-box {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card-number-box:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .card-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            direction: ltr;
+            display: inline-block;
+            font-family: 'Vazirmatn', monospace;
+        }
+
+        .card-owner {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 0.8rem;
+        }
+
+        .copy-hint {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Quote */
+        .quote-section {
+            padding: 4rem 2rem;
+            background: var(--background);
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #151515 0%, #0f0f0f 100%);
+            padding: 3.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+            color: var(--accent);
+            font-family: 'Lalezar', cursive;
+        }
+
+        .quote-subtext {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: var(--text-light);
+        }
+
+        /* Contact */
+        .quick-contact-section {
+            padding: 5rem 2rem;
+            background: var(--background);
+        }
+
+        .quick-contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .contact-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0a0a0a;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.6rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .contact-details a,
+        .contact-details p {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .social-link {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            position: relative;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-accent);
+            color: #0a0a0a;
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+            border-color: transparent;
+        }
+
+        .social-text {
+            position: absolute;
+            bottom: -28px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: var(--white);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3px 8px;
+            border-radius: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .social-link:hover .social-text {
+            opacity: 1;
+        }
+
+        .quick-contact {
+            background: linear-gradient(145deg, #151515 0%, #0f0f0f 100%);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-heavy);
+            text-align: center;
+            transition: all 0.4s ease;
+            color: var(--white);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .quick-contact:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .quick-contact h3 {
+            margin-bottom: 1.2rem;
+            font-size: 1.7rem;
+            font-weight: 700;
+            font-family: 'Lalezar', cursive;
+            color: var(--accent);
+        }
+
+        .quick-contact p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 1.1rem;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid transparent;
+        }
+
+        .contact-btn.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .contact-btn.telegram {
+            background: linear-gradient(135deg, #0088cc, #005f8b);
+            color: white;
+        }
+
+        .contact-btn.email {
+            background: linear-gradient(135deg, #EA4335, #C5221F);
+            color: white;
+        }
+
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .contact-btn.call {
+            background: var(--gradient-accent);
+            color: #0a0a0a;
+            font-weight: 700;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Features */
+        .features {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            font-family: 'Lalezar', cursive;
+            color: var(--accent);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.8rem;
+            color: var(--accent);
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.15) rotate(10deg);
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--accent-light);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .feature-card p {
+            line-height: 1.8;
+            font-size: 1rem;
+            opacity: 0.85;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Lalezar', cursive;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .footer-col a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            direction: ltr;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Copy Notification */
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-accent);
+            color: #0a0a0a;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-heavy);
+            z-index: 1001;
+            display: none;
+            font-weight: 600;
+            animation: fadeInUp 0.3s;
+        }
+
+        .copy-notification.show {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.9rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 span {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .quick-contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                padding: 4rem 1.5rem;
+            }
+
+            .quick-contact-section,
+            .quote-section,
+            .card-highlight-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .social-text {
+                display: none;
+            }
+
+            .quote-text {
+                font-size: 1.6rem;
+            }
+
+            .card-number {
+                font-size: 1.3rem;
+            }
+
+            .card-highlight-container {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem 2.5rem;
+                min-height: 65vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h1 span {
+                font-size: 1.4rem;
+            }
+
+            .features,
+            .quick-contact-section,
+            .quote-section,
+            .card-highlight-section {
+                padding: 3rem 1rem;
+            }
+
+            .feature-card,
+            .quick-contact,
+            .quote-container,
+            .card-highlight-container {
+                padding: 2rem 1.2rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .quote-text {
+                font-size: 1.4rem;
+            }
+
+            .card-number {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-text">Sohrab.sa</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">خانه</a></li>
+                    <li><a href="#card">شماره کارت</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                    <li><a href="#features">ویژگی‌ها</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Sohrab.sa <span>لوازم جانبی موبایل</span></h1>
+            <p>ارائه بهترین لوازم جانبی موبایل با کیفیت اورجینال، قیمت مناسب و ارسال سریع به سراسر کشور</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> تماس با ما
+                </a>
+                <a href="#card" class="btn btn-secondary">
+                    <i class="fas fa-credit-card"></i> شماره کارت
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card -->
+    <section class="card-highlight-section" id="card">
+        <div class="card-highlight-container">
+            <div class="card-highlight-content">
+                <div class="card-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="card-highlight-title">شماره کارت جهت واریز</h3>
+                <div class="card-number-box" id="cardNumberBox">
+                    <div class="card-number" id="cardNumber">6219861424855830</div>
+                    <div class="card-owner"></div>
+                    <div class="copy-hint">برای کپی کردن کلیک کنید</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <div class="quote-container">
+            <div class="quote-text">کیفیت ، تضمین، قیمت مناسب</div>
+            <div class="quote-subtext">با بهترین خدمات و محصولات اورجینال</div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="quick-contact-section" id="contact">
+        <div class="quick-contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شماره تماس</h3>
+                        <a href="tel:09921061090">09921061090</a>
+                        <a href="tel:09150689743">09150689743</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>ایمیل</h3>
+                        <a href="mailto:sonor.kokoo@gmail.com">sonor.kokoo@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>شبکه‌های اجتماعی</h3>
+                        <p>اینستاگرام: @sohrab.sarr</p>
+                        <p>تلگرام: @Sohrab1090</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/sohrab.sarr" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                <span class="social-text">Instagram</span>
+                            </a>
+                            <a href="https://t.me/Sohrab1090" class="social-link" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                                <span class="social-text">Telegram</span>
+                            </a>
+                            <a href="mailto:sonor.kokoo@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                                <span class="social-text">Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-contact">
+                <h3>ارتباط سریع</h3>
+                <p>برای دریافت اطلاعات بیشتر، مشاوره رایگان و خرید، از طریق یکی از روش‌های زیر با ما در تماس باشید</p>
+
+                <div class="contact-buttons">
+                    <a href="https://instagram.com/sohrab.sarr" class="contact-btn instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> اینستاگرام
+                    </a>
+
+                    <a href="https://t.me/Sohrab1090" class="contact-btn telegram" target="_blank">
+                        <i class="fab fa-telegram"></i> تلگرام
+                    </a>
+
+                    <a href="mailto:sonor.kokoo@gmail.com" class="contact-btn email">
+                        <i class="fas fa-envelope"></i> ایمیل
+                    </a>
+
+                    <a href="https://wa.me/989921061090" class="contact-btn whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> واتساپ
+                    </a>
+
+                    <a href="tel:09921061090" class="contact-btn call">
+                        <i class="fas fa-phone-alt"></i> تماس تلفنی
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>چرا Sohrab.sa؟</h2>
+            <p>ویژگی‌هایی که ما را به انتخاب اول شما تبدیل می‌کند</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>لوازم جانبی موبایل</h3>
+                <p>فروش انواع لوازم جانبی موبایل با بهترین کیفیت و قیمت مناسب</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h3>هدفون و هندزفری</h3>
+                <p>انواع هدفون و هندزفری با کیفیت بالا و قیمت مناسب</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <h3>پاوربانک و شارژر</h3>
+                <p>انواع پاوربانک و شارژر با کیفیت عالی و گارانتی معتبر</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>ارسال به سراسر کشور</h3>
+                <p>ارسال محصولات به سراسر ایران با بهترین روش‌های حمل و نقل</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Sohrab.sa</h4>
+                <p>فروش تخصصی لوازم جانبی مو
